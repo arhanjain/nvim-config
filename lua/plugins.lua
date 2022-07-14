@@ -25,6 +25,19 @@ return require("packer").startup(function()
 	-- Packer manages itself
 	use {'wbthomason/packer.nvim', opt = true}
 
+	-- LSP Kind: Pictograms for completion
+	use {"onsails/lspkind-nvim", event = "VimEnter"}
+	-- Autocompletion
+	use {"hrsh7th/nvim-cmp", after = "lspkind-nvim", config = [[require('config.nvim-cmp')]]}
+
+	-- nvim-cmp completion sources
+	use {"hrsh7th/cmp-nvim-lsp", after = "nvim-cmp"}
+	use {"hrsh7th/cmp-path", after = "nvim-cmp"}
+	use {"hrsh7th/cmp-buffer", after = "nvim-cmp"}
+
+	-- LSP Config
+	use {"neovim/nvim-lspconfig", after = "cmp-nvim-lsp", config = [[require "config.lsp"]]}
+	
 	-- Themes
 	use { 'projekt0n/github-nvim-theme', opt = true }
 	use {'EdenEast/nightfox.nvim'}
