@@ -36,11 +36,18 @@ return require("packer").startup(function()
 	use {"hrsh7th/cmp-buffer", after = "nvim-cmp"}
 
 	-- LSP Config
-	use {"neovim/nvim-lspconfig", after = "cmp-nvim-lsp", config = [[require "config.lsp"]]}
+	use {"neovim/nvim-lspconfig",after = "cmp-nvim-lsp", config = [[require "config.lsp"]]}
+
+	-- Lua Line
+	use {'kyazdani42/nvim-web-devicons', event = 'VimEnter'}
+	use { 'nvim-lualine/lualine.nvim', event = 'VimEnter', config = [[require('config.lualine')]]}
+
 	
 	-- Themes
+	use { 'sainnhe/everforest',}
 	use { 'projekt0n/github-nvim-theme', opt = true }
-	use {'EdenEast/nightfox.nvim'}
+	use {'EdenEast/nightfox.nvim', opt = true }
+	
 
 end)
 
