@@ -1,6 +1,12 @@
-lua require('plugins')
+lua require('init')
 
-colorscheme nordfox
+if has('termguicolors')
+	set termguicolors
+endif
+
+set background=dark
+
+colorscheme everforest
 
 augroup packer_auto_compile
   autocmd!
